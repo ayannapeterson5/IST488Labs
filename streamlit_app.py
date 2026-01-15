@@ -14,6 +14,7 @@ st.write(
 openai_api_key = st.text_input("OpenAI API Key", type="password")
 if not openai_api_key:
     st.info("Please add your OpenAI API key to continue.", icon="🗝️")
+    st.stop
 else:
 
     # Create an OpenAI client.
