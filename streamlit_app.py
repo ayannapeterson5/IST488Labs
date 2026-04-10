@@ -19,6 +19,8 @@ elif choice == "Lab 5":
     exec(open("Labs/Lab5.py").read())
 elif choice == "Lab 6":
     exec(open("Labs/Lab6.py").read())
+elif choice == "Lab 8":
+    exec(open("Labs/Lab8.py").read())
 
 
 

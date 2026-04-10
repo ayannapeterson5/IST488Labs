@@ -146,3 +146,39 @@ if follow_up and st.session_state.last_response_id:
 
         st.subheader("Follow-Up Answer")
         st.write(followup_response.output_text)
+
+
+        query_embedding = embed(query)
+results = vector_db.search(query_embedding, k=5)
+
+
+# Step 1: Convert documents into embeddings
+doc_embeddings = [embed(doc) for doc in documents]
+
+# Step 2: Retrieve similar documents
+query_embedding = embed(query)
+results = vector_db.search(query_embedding, k=5)
+
+# Step 3: Rerank results by relevance
+reranked = sorted(results, key=lambda doc: relevance(query, doc), reverse=True)
+
+# Step 4: Add context to prompt
+context = "\n".join(reranked[:3])
+prompt = f"{query}\n\nContext:\n{context}"
+
+# Step 5: Generate final response
+response = llm(prompt)
+
+print(response)
+
+
+
+# Convert text to embeddings
+doc_embedding = embed("The midterm is October 14")
+query_embedding = embed("When is the midterm?")
+
+# Compute similarity (cosine similarity)
+similarity = cosine_similarity(query_embedding, doc_embedding)
+
+print(similarity)
+
