@@ -2,8 +2,8 @@ import streamlit as st
 
 choice = st.sidebar.selectbox(
     "Choose a lab",
-    ["Lab 1", "Lab 2", "Lab 3", "Lab 4", "Lab 5", "Lab 6"],
-    index=4
+    ["Lab 1", "Lab 2", "Lab 3", "Lab 4", "Lab 5", "Lab 6", "Lab 8"],
+    index=6
 )
 
 
