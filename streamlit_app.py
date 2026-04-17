@@ -2,8 +2,8 @@ import streamlit as st
 
 choice = st.sidebar.selectbox(
     "Choose a lab",
-    ["Lab 1", "Lab 2", "Lab 3", "Lab 4", "Lab 5", "Lab 6", "Lab 8"],
-    index=6
+    ["Lab 1", "Lab 2", "Lab 3", "Lab 4", "Lab 5", "Lab 6", "Lab 8", "Lab 9"],
+    index=7
 )
 
 
@@ -21,6 +21,8 @@ elif choice == "Lab 6":
     exec(open("Labs/Lab6.py").read())
 elif choice == "Lab 8":
     exec(open("Labs/Lab8.py").read())
+elif choice == "Lab 9":
+    exec(open("Labs/Lab9.py").read())
 
 
 
